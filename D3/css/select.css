@@ -1,0 +1,45 @@
+.select-style {
+   background: transparent;
+   width: 150px;
+   height: 100px;
+
+   padding: 5px;
+   font-size: 23px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+
+}
+
+#submit{
+ font-size: 21px;
+ width: 180px;
+ height: 34px;
+ line-height: 0;
+ border-radius: 0;
+
+ background: #ccc; 
+}
+
+.styled-select select {
+   background: transparent;
+   width: 220px;
+   padding: 5px;
+   font-size: 23px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+.styled-select {
+   width: 100px;
+   font-size: 22px;
+   height: 20px;
+   overflow: hidden;
+   background: url("new_arrow.png") no-repeat right #ccc;
+   border: 1px solid #ccc;
+   }

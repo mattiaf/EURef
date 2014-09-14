@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Two graphs on this page</title>
+
+	<!-- Mattia's style for d3-->
+	<link href="css/twographs.css" rel="stylesheet">
+
+	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="map.html">EURefugees</a>
+                <ul class="nav navbar-nav">
+
+          <li><a href="map.html">Map / Overview</a></li>
+          <li class="active"><a href="hosts.html">Host Countries</a></li>
+          <li><a href="table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14">Where to go?</a></li>
+          <li ><a href="sexage.html">Gender and Age</a></li>
+			</ul>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div><!--/.navbar- -->
+
+
+    <div class="container">
+      <div class="jumbotron">
+       <h3>WHICH COUNTRIES ACCEPT MORE REFUGEES?</h3>
+        <p>
+        
+        The number of refugees accepted in each country varies on the total population of the country itself and its economic condition.
+        <br>The following graphs compare the amount of refugees accepted in each European country with socio - economic statistics of the countries.
+        <br>Passing the mouse on one dot highlights the same country in the other graph.
+        
+        </p>  		  
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+
+        <div class="col-md-6" id="area1">
+        <br>
+        </div>
+
+        <div class="col-md-6"  id="area2">
+        <br>
+        </div>
+
+		    <script src="http://d3js.org/d3.v3.min.js"></script>
+  		    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+     		<script src="http://d3js.org/topojson.v1.min.js"></script>
+     		<script src="js/twographs3.js"></script>
+
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+        <big>
+        Countries with a larger population do not necessarily accept more asylum seekers. 
+        Northern and Western European countries (boosted by low unemployment and high GDP pro capita) tend to accept more refugees than 
+        Southern and Eastern nations (which have lower GDP, albeit very different unemployment rates).
+          <br>
+            <br>
+        </big>
+
+        </div>
+
+        <div class="col-md-6">
+        <big>
+
+        Within Southern European countries, the ones with a higher unemployment rate (such as Spain and Greece) accept less refugees
+        than those with a lower unemployment rate (like Italy or Malta).
+        
+       <br>
+       <br>
+        
+        <small>
+        Data on <a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/product_details/dataset?p_product_code=MIGR_ASYDCFSTA">refugees</a>, 
+        <a href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_gdp_c&lang=en">GDP</a> and 
+        <a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/employment_unemployment_lfs/data/main_tables">Unemployment</a> from Eurostat. <br>
+        Data wrangling in R, visualization in D3.
+        </small>        
+        </big>
+
+        </div>
+      
+      </div>
+
+
+
+      <footer>
+        <p>&copy; Mattia Fumagalli 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

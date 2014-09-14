@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Table</title>
+
+
+	
+	<!-- Mattia's style for d3-->
+	<link href="css/special.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Mattia's style for graphs-->
+    <link href="css/twographs.css" rel="stylesheet">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+
+	<!-- Mattia's style for table-->
+    <link href="css/table.css" rel="stylesheet">
+
+	<!-- Mattia's style for select form-->
+    <link href="css/select.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="map.html">EURefugees</a>
+            <ul class="nav navbar-nav">
+
+          <li><a href="map.html">Map / Overview</a></li>
+          <li><a href="hosts.html">Host Countries</a></li>
+          <li class="active"><a href="table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14">Where to go?</a></li>
+          <li ><a href="sexage.html">Gender and Age</a></li>
+			</ul>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div><!--/.navbar- -->
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="container">
+      <div class="jumbotron">
+      <div class="row">
+
+        <div class="col-md-6"  id="area2">
+        <br>
+        
+        </div>
+
+		<script src="js/graphontable.js"></script>
+
+
+        <div class="col-md-2"  id="areabuffer">
+        
+        </div>
+
+	
+	    <div class="col-md-4"  id="area1">
+		<br>
+		<p>
+		Given a combination of origin, sex, and age of the refugee applicant, you can explore 
+		how number of applicants and acceptance rates in different European countries vary with
+        the number of foreigners already living in that country and the economy of the destination country.
+       
+       <br>
+       <br>
+		Values are listed in the table at the bottom, which is fully sortable by clicking on the column headers.       
+       
+        
+        <p>
+   					   	<form action="table.html" method="get">
+						<span class="styled-select">
+				
+					  <select name="CITIZEN">
+				    <option selected="selected" disabled>Choose Origin</option>
+						           <option  value="Afghanistan">Afghanistan</option>    
+						           <option  value="Bangladesh">Bangladesh</option>
+						           <option  value="China">China</option>
+				  		           <option  value="Congo">Congo</option>
+						           <option  value="Eritrea">Eritrea</option>
+						           <option  value="Georgia">Georgia</option>
+								   <option  value="Guinea">Guinea</option>
+						           <option  value="Kosovo">Kosovo</option>
+						           <option  value="Iran">Iran</option>
+						           <option  value="Iraq">Iraq</option>
+		           				   <option  value="Macedonia">Macedonia</option>
+						           <option  value="Nigeria">Nigeria</option>
+							       <option  value="Pakistan">Pakistan</option>
+						           <option  value="Russia">Russia</option>
+						           <option  value="Serbia">Serbia</option>
+						           <option  value="Somalia">Somalia</option>
+						           <option  value="Syria">Syria</option>
+						           <option  value="Turkey">Turkey</option>
+				  </select>
+				</span>
+				<br>
+				<span class="styled-select">
+				  <select name="SEX">
+				    <option selected="selected" disabled>Choose Sex</option>
+				    <option value="Males">Male</option>
+				    <option value="Females">Female</option>
+				  </select>
+				 </span>
+				 <br>
+				<span class="styled-select">
+				  <select name="AGE">
+				    <option selected="selected" disabled>Choose Age</option>
+				    <option value="0-14">0-14</option>
+				    <option value="14-17">14-17</option>
+				    <option value="18-34">18-34</option>
+				    <option value="35-64">35-64</option>
+				    <option value="65-...">65-...</option>
+				  </select>
+				</span>
+				
+				<br>
+				<input type="submit" name="submit" value="Regenrate >>" id="submit" />
+				
+				</form>
+
+   </div>
+
+   </div>
+
+
+      </div>  <!-- jumbotron  -->
+   </div> <!--  container -->
+
+
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+
+       <div class="col-md-2"  id="areabuffer">
+       
+       </div>
+
+
+       <div class="col-md-8" id="areatable">
+
+		<br>
+		<br>
+       <table id="tablecountries" class="tablematt">
+
+	   <thead>
+	   </thead>
+		   
+		    <tbody></tbody>
+		</table>
+        </div>
+
+       <div class="col-md-2"  id="areabuffer">
+       
+       </div>
+
+
+       </div> 
+
+   
+      <footer>
+        <p>&copy; Mattia Fumagalli 2014</p>
+      </footer>
+    </div> <!-- /container -->
+    <script src="js/table.js"></script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+body {
+  font: 11px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+  opacity: 0.8;
+}
+
+.tooltip {
+  background: #577492;
+  position: absolute;
+  font-size: 19px;
+  color: #dfdfdf;
+  pointer-events: none;
+}
+
+.tooltip text{
+    font-family: sans-serif;
+    font-size: 13;
+
+}
+
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.label {
+    font-family: sans-serif;
+    font-size: 19px;
+}

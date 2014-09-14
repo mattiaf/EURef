@@ -1,0 +1,122 @@
+.graticule{
+  fill: none;
+  stroke: #bbb;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+
+.country{
+  stroke: #000;
+  stroke-width: 0.4px;
+  fill: #000;
+  visibility: "hidden"
+}
+
+.highlight{
+  stroke: #fff;
+  stroke-width: 4.5px;
+}
+
+.texttitle{
+  font-size:40px;
+  text-transform:capitalize;
+}
+
+.text{
+  font-size:10px;
+  text-transform:capitalize;
+}
+
+  
+.containerd3 {
+// margin:0 10%;
+ // border:0px solid #000;
+  //border-radius: 5px;
+
+  overflow:hidden;
+  background: #7D8E9C;
+}
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+  color: #222; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 1.0; 
+  position: absolute;
+  background: #f5f5f5; // #F0F8FF;
+
+}
+
+#legend {
+    padding: 1.5em 0 0 1.5em;
+}
+
+.pointmap {
+  fill: none; //;
+  stroke: #000000;
+  opacity: 1;
+  stroke-width: 2px;
+  stroke-opacity: 1;
+  r: 3pt;
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 300px;
+
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+.styled-select select {
+   background: transparent;
+   width: 300px;
+   padding: 5px;
+   font-size: 23px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+.styled-select {
+   width: 300px;
+   font-size: 1px;
+   height: 34px;
+   overflow: hidden;
+   background: url("new_arrow.png") no-repeat right #ccc;
+   border: 1px solid #ccc;
+   }
+   
+   
+.styled-select-bis select {
+   background: #eee; //577492
+   width: 300px;
+   height: 32px;
+   padding: 1px;
+   font-size: 13px;
+   border: 3;
+   border-radius: 1;
+   font-color: #fff;
+   }
+
+.styled-select-bis {
+   width: 300px;
+   font-size: 1px;
+   height: 34px;
+   font-size: 10px;
+
+   overflow: hidden;
+   background: url("new_arrow.png") no-repeat right #ffffs;
+   border: 1px solid #ccc;
+   }
+   
+      
+   
+   

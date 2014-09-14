@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>EURefugees</title>
+
+	<!-- Mattia's style for d3-->
+	<link href="css/special.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="map.html">EURefugees</a>
+
+          <li  class="active"><a href="map.html">Map / Overview</a></li>
+          <li><a href="hosts.html">Host Countries</a></li>
+          <li><a href="table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14">Where to go?</a></li>
+          <li ><a href="sexage.html">Gender and Age</a></li>
+			</ul>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div><!--/.navbar- -->
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+      <div class="container">
+    <div class="jumbotron">
+        <p> <small>In the last 5 years, more than a million refugees reached Europe.
+         Only a fraction of them got granted asylum. The likelihood of obtaining refugee status varies on the nationality of the applicant, and their destination.
+		 <br>        
+         This interactive map shows how many refugees applied for asylum and what is their acceptance rate in each European country.
+         Citizenships with more than 25000 asylum applicants are individually selectable in the menu below.
+         </small>
+        </p>         
+
+        <div id="containerd3" class="containerd3" style="height: 500px width: 500px">
+              		    <div class="styled-select">
+		    <select onchange="draw(topo)" id="metric">
+	 			   <option selected disabled value="Total">Select Country of Origin</option>
+		
+		           <option  value="Total">Total</option>
+		           <option class="select-dash" disabled="disabled">----</option>
+
+		           <option  value="Afghanistan">Afghanistan</option>    
+		           <option  value="Bangladesh">Bangladesh</option>
+		           <option  value="China">China</option>
+  		           <option  value="Congo">Congo</option>
+		           <option  value="Eritrea">Eritrea</option>
+		           <option  value="Georgia">Georgia</option>
+				   <option  value="Guinea">Guinea</option>
+		           <option  value="Kosovo">Kosovo</option>
+		           <option  value="Iran">Iran</option>
+		           <option  value="Iraq">Iraq</option>
+		           <option  value="Macedonia">Macedonia</option>
+		           <option  value="Nigeria">Nigeria</option>
+			       <option  value="Pakistan">Pakistan</option>
+		           <option  value="Russia">Russia</option>
+		           <option  value="Serbia">Serbia</option>
+		           <option  value="Somalia">Somalia</option>
+		           <option  value="Syria">Syria</option>
+		           <option  value="Turkey">Turkey</option>
+
+			</select>
+			</div>
+		  </div>
+		    <script src="http://d3js.org/d3.v3.min.js"></script>
+  		    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+     		<script src="http://d3js.org/topojson.v1.min.js"></script>
+     		<script src="js/refmap.js"></script> 
+	  <p></p>
+      <p align="right"> <font size=2> Data from Eurostat / Data analysis with R / Visualization in D3</font></p>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Which countries accept more refugees?</h3>
+          <p>The amount of refugees accepted in each country correlates with the economic conditions of the country itself.<br>
+          Statistics on refugees acceptances are matched with economy statistics of the destination countries.
+          </p>
+          <p><a class="btn btn-default" href="hosts.html" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h3>Women and children first</h3>
+          <p>The outcome of a refugee application depends on the age an the sex of the applicant.</p>
+          <p>Chances of getting asylum are higher for female applicants, and for kids or elders.</p>
+          <p><a class="btn btn-default" href="sexage.html" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h3>Where to go?</h3>
+          <p>
+      	  Acceptance rates for asylum seekers are combined
+          with the presence of established ethnic communities and the economic situation of the destination country.
+          Given a combination of origin, sex, and age of the applicant, you can see what are the chances of getting asylum status 
+          in different European countries and how many compatriots
+          already live there.
+          </p>
+
+<form action="table.html" method="get">
+<span class="styled-select-bis" >
+
+  <select name="CITIZEN">
+    <option selected="selected" disabled>Select Origin</option>
+		           <option  value="Afghanistan">Afghanistan</option>    
+		           <option  value="Bangladesh">Bangladesh</option>
+		           <option  value="China">China</option>
+  		           <option  value="Congo">Congo</option>
+		           <option  value="Eritrea">Eritrea</option>
+		           <option  value="Georgia">Georgia</option>
+				   <option  value="Guinea">Guinea</option>
+		           <option  value="Kosovo">Kosovo</option>
+		           <option  value="Iran">Iran</option>
+		           <option  value="Iraq">Iraq</option>
+		           <option  value="Macedonia">Macedonia</option>
+		           <option  value="Nigeria">Nigeria</option>
+			       <option  value="Pakistan">Pakistan</option>
+		           <option  value="Russia">Russia</option>
+		           <option  value="Serbia">Serbia</option>
+		           <option  value="Somalia">Somalia</option>
+		           <option  value="Syria">Syria</option>
+		           <option  value="Turkey">Turkey</option>
+  </select>
+</span>
+<span class="styled-select-bis">
+  <select name="SEX">
+    <option selected="selected" disabled>Select Sex</option>
+    <option value="Males">Male</option>
+    <option value="Females">Female</option>
+  </select>
+ </span>
+<span class="styled-select-bis">
+  <select name="AGE">
+    <option selected="selected" disabled>Select Age</option>
+    <option value="0-14">0-14</option>
+    <option value="14-17">14-17</option>
+    <option value="18-34">18-34</option>
+    <option value="35-64">35-64</option>
+    <option value="65-...">65-...</option>
+  </select>
+</span>
+ <br>
+
+<!---<input type="submit" name="submit" id="submit" />--->
+        <button type="submit" name="submit" id="submit" class="btn btn-default">Show &raquo;</button>
+
+
+</form>
+
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Mattia Fumagalli 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+#thumb3wrap {
+	margin:0px auto;
+	width:252px; height:252px;
+}
+.thumb3 {
+	float:right; /* must be floated for same cross browser position of larger image */
+	position:relative;
+	margin:2px;
+}
+.thumb3 img { 
+	border:1px solid #000;
+	vertical-align:bottom;
+}
+.thumb3:hover {
+	border:0; /* IE6 needs this to show large image */
+	z-index:1;
+}
+.thumb3 span { 
+	position:absolute;
+	visibility:hidden;
+}
+.thumb3:hover span { 
+	visibility:visible;
+	top:-20px; right:207px; 
+}

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Gender and Age</title>
+
+	<!-- Mattia's style for d3-->
+	<link href="css/twographs.css" rel="stylesheet">
+	
+	<!-- Mattia's style for popups-->
+	<link href="css/popup.css" rel="stylesheet">
+
+	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="map.html">EURefugees</a>
+                <ul class="nav navbar-nav">
+
+          <li><a href="map.html">Map / Overview</a></li>
+          <li><a href="hosts.html">Host Countries</a></li>
+          <li><a href="table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14">Where to go?</a></li>
+          <li class="active"><a href="sexage.html">Gender and Age</a></li>
+
+			</ul>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div><!--/.navbar- -->
+
+
+    <div class="container">
+      <div class="jumbotron">
+       <h4></h4>
+
+		  <br>
+      <div class="row">
+
+        <div class="col-md-6" id="area1">
+        <img alt="My Image" src="img/Rplot09.jpeg"  alt="name"  />
+        </div>
+
+        <div class="col-md-6"  id="area2">
+        <h2>WOMEN AND CHILDREN FIRST</h2>
+        <p>
+
+        As we have seen <a href="map.html">before</a>, the acceptance rate of refugees depends on their nationality and their destination.
+        
+        However, given a country of origin and a country of destination we can find additional trends with age and sex of the applicants.
+        <br>
+        <br>
+
+        The plot on the left compares the accetance rates of men and women. Each data point represents refugees from a different country 
+        going to a different European country. 
+        For most combinations of origin and destination women have a higher acceptance rate than men.
+
+        </p> 
+        </div>
+
+
+      </div>
+ 		  
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      
+              <div class="col-md-8"  id="area2">
+        <br>
+        <br>
+        <br>
+        <p><big>
+        Looking at different combinations of countries of origin / destination, we can see how age and sex of the applicants influence the likelihood of having a 
+        refugee status granted. Some examples are shown on the right. In most cases, as we have seen above, women have a higher acceptance rate than men. Moreover, the acceptance rates seems to be higher
+        for young and old people.
+      	</big></p>
+
+		<br>
+		<h3>PUTTING THINGS TOGETHER</h3>
+        <p><big>
+        The examples on the right show that gender and age of the applicant influence the outcome of asylum status.
+        However, the dominant factor that influences the acceptance rate is still the combination of origin and destination
+        (for example Somali going to the Netherlands have a higher acceptance rate than Afghani going to Germany).
+        We isolate the effect of age and gender alone by dividing each acceptance rate (given origin, destination, sex, gender)
+        by the acceptance rate no matter what age and gender the applicants are.
+ 		<br>
+
+      	</big></p>
+
+        
+        </div>
+
+
+
+
+        <div class="col-md-3" id="" align="right">
+        	<br>
+        	<h4>Acceptance by age and sex</h3>
+			<div id="thumb3wrap" align="right">
+				<a class="thumb3" href="#"><img src="img/Rplot03.jpeg" width="60%" height="60%" alt=""><span><img src="img/Rplot03.jpeg" alt=""></span></a>
+				<a class="thumb3" href="#"><img src="img/Rplot04.jpeg" width="60%" height="60%" alt=""><span><img src="img/Rplot04.jpeg" alt=""></span></a>
+				<a class="thumb3" href="#"><img src="img/Rplot02.jpeg" width="60%" height="60%" alt=""><span><img src="img/Rplot02.jpeg" alt=""></span></a>
+
+			</div>        
+		</div>
+
+              <div class="col-md-1"  id="area2">
+        <br>
+        </div>
+
+
+      </div>
+      <div class="row">
+      
+              <div class="col-md-12"  id="area2">
+	
+
+        <img alt="My Image" src="img/Rplot07.jpeg"  width="36%" height="36%" alt="name" border="1px" solid="#000"  />         <img alt="My Image" src="img/Rplot06.jpeg" width="36%" height="36%"  alt="name" border="1px" solid="#000" />
+		<br>
+		<br>
+
+		 <p><big>The box-and-whisker plots above show the acceptance rate by gender and age divided by the general 
+		 acceptance of refugees of a certain origin in a certain destination.
+		 Even though the dispersion on values is big, most of women's value lie above 1, indicating an increased probability of success.
+		 For men, the age trend becomes significative. 
+		 If you are a man aged 18 to 35, your chances of getting accepted as a refugee are 20% lower than the overall 
+		 population coming from the same country and going to the same destaination.
+		 However, values for male kids and elders tend to lie above 1, showing a higher probability of positive outcome.
+		 
+		<br>
+		<br>		 
+		 <h3>SUMMARIZING</h3>
+		<ul>
+		<li>If you are an asylum seeker, the chances of getting a positive outcome of your refugee application depend mainly on where you come from, and where you apply to.
+		</li>
+		<li>If you are a woman, your probability of getting asylum status is increased no matter what your age is.</li>
+		<li>If you are a man, your probability of getting asylum status will be higher if you are underage or over 65, and lower otherwise.</li>
+		</ul>
+		 </big>
+		</p>
+		<br>		 
+		<br>		 
+
+        </div>
+
+
+      </div>
+      <footer>
+        <p>&copy; Mattia Fumagalli 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+ 
+  </body>
+</html>
