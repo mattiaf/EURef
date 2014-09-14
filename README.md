@@ -5,3 +5,7 @@ where I analyze the flux of refugees in Europe, and in particular try to answer 
 * Do those depend on the country of destination, their nationality, their age?
 * Which European countries accept more refugees? Is there any correlation with the economic situation of the countries itself?
 * Do refugees tend to go to countries where there is already a community of immigrants from their home nation?
+
+The R folder includes the codes used for analysing the data.
+
+The D3 folder includes the scripts used for the online visualizations.
