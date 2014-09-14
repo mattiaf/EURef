@@ -13,4 +13,8 @@ The R folder includes the codes used for analysing the data.
 The D3 folder includes the scripts used for the online visualizations.
 
 ### Credits
-These visualizations could have not existed without the amazing online tutorials by Mike Bostock, such as Let's Make a Map (http://bost.ocks.org/mike/map/)
+These visualizations could have not existed without the marvellous plethora of tutorial for D3 available on the web, and in particular 
+
+* D3 tutorials, by Scott Murray http://alignedleft.com/tutorials/d3
+* Let's Make a Map, by Mike Bostock(http://bost.ocks.org/mike/map/)
+* 
