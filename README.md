@@ -7,14 +7,14 @@ where I analyze the flux of refugees in Europe, and in particular try to answer 
 * Do refugees tend to go to countries where there is already a community of immigrants from their home nation?
 
 # R
-The R folder includes the codes used for analysing the data.
+The R folder includes the codes used for wrangling/analysing the data.
 
 #### Codes
 *datatojson.R* takes as input a TopoJSON map of the world and fills the properties of countries with data on refugees acceptances.
 The code generates the json used in http://www.mfumagalli.com/EURef/map.html
 
 *refugees_citizens.R* matches statistics on refugees with number of foreign citizens already living in the destination country
-The code generates the CSV used in file:///Users/mattia/Projects/EURefSite/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14
+The code generates the CSV used in http://www.mfumagalli.com/EURef/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14
 
 
 # D3
