@@ -9,6 +9,11 @@ where I analyze the flux of refugees in Europe, and in particular try to answer 
 ## R
 The R folder includes the codes used for analysing the data.
 
+### Codes
+*datatojson.R* takes as input a TopoJSON map of the world and fills the properties of countries with data on refugees acceptances.
+It is used for generate the page file:///Users/mattia/Projects/EURefSite/map.html
+
+
 ## D3
 The D3 folder includes the scripts used for the online visualizations.
 
@@ -17,4 +22,4 @@ These visualizations could have not existed without the marvellous plethora of t
 
 * D3 tutorials, by Scott Murray http://alignedleft.com/tutorials/d3
 * Let's Make a Map, by Mike Bostock(http://bost.ocks.org/mike/map/)
-* 
+* Sortable Table, by devforrest (http://devforrest.com/examples/table/table.php)

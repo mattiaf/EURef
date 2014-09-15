@@ -1,6 +1,6 @@
 # ----------------
 # This code matches the number of refugees of nationality X going to country Y with
-# _ economy stats of country Y (GDP, Unemployment)
+# _ economy stats of country Y (GDP, Unemployment), created with GDP_acceptance.R
 # _ how many people with citizenship X already live in country Y
 # ----------------
 
@@ -58,7 +58,7 @@ Citizens_wide$citizens_year<-as.numeric(Citizens_wide$citizens_year)
 Citizens<-Citizens_wide[,c(1,2,15,16)]
 
 ### ----- UNEMPLOYMENT / ECONOMY DATA -----###
-nationsSTAT<-read.csv('GPDpeoplein3.csv') # just read
+nationsSTAT<-read.csv('GPDpeoplein3.csv') # just read. file created with GDP_acceptance.R
 
 
 ### ----- REFUGEES DATA ------- #####
