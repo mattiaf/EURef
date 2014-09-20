@@ -8,10 +8,10 @@
 # ----------------
 
 library(jsonlite)
-#OPEN TOPO-JSON WITH BORDERS
+# OPEN TOPO-JSON WITH BORDERS
 jsonin<-fromJSON("TopoJson/world-topo-min.json")
 
-#OPEN REFUGEES DATA
+# OPEN REFUGEES DATA (created with refugees_destinations.R)
 csvtable<-read.csv("FormattedData/percentagegeocitizen.csv") # percentages of acceptance
 names(csvtable)[1]<-"country"
 csvtable_total<-read.csv("FormattedData/totalgeocitizen.csv") # total applications
@@ -51,6 +51,6 @@ myjson <- toJSON(jsonin, pretty=FALSE,auto_unbox=FALSE)
 myjson<-gsub('[\"GeometryCollection\"]', '\"GeometryCollection\"', as.character(myjson), fixed=TRUE) # R doesn't format this correctly by default
 myjson<-gsub('[\"Topology\"]', '\"Topology\"', as.character(myjson), fixed=TRUE) # R doesn't format this correctly by default
 cat(myjson,file="TopoJson/world-topo-min-2.json")
-cat(myjson,file="../D3/js/world-topo-min-2.json")
+cat(myjson,file="../Web/js/world-topo-min-2.json")
 
 
