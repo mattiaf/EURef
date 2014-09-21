@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Table</title>
+    <title>EURefugees</title>
 
 
 	
@@ -68,87 +68,97 @@
       <div class="jumbotron">
       <div class="row">
 
-        <div class="col-md-6"  id="area2">
-        <br>
-        
+        <div class="col-lg-8"  id="area2">
+        	<br>
         </div>
-
 		<script src="js/graphontable.js"></script>
 
+	    <div class="col-lg-4"  id="area1">
+			<br>
+			<p>
+			<small>
+	        This graph explores the relation between an individual’s profile and two country variables which may influence where asylum seekers apply.
+	        Though asylum seekers may be very limited in choice of destination countries due to a number of reasons, 
+	        this graph allows you to explore how the number of applicants and acceptance rates in different European countries vary with the number of foreigners 
+			already living in that country and the economy of the destination country, given the origin, sex, and age of an applicant.
+	        <br> <br>
+			Values are listed in the table at the bottom, which is fully sortable by clicking on the column headers.       
+	       </small>
+	        </p>
+	        
+	   	
 
-        <div class="col-md-2"  id="areabuffer">
-        
+	    </div><!---cell--->
+
+   	</div> <!---row--->
+
+    <div class="row">
+
+        <div class="col-lg-8">
+	                Data on <a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/product_details/dataset?p_product_code=MIGR_ASYDCFSTA">refugees</a>, 
+	        <a href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_gdp_c&lang=en">GDP</a>,
+	        <a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/employment_unemployment_lfs/data/main_tables">unemployment</a> and 
+	        <a href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en">ethnic communities</a>
+	        from Eurostat. <br>
+	        Data wrangling and analysis in R / visualization in D3 / <a href="https://github.com/mattiaf/EURef"> <img height="10" src="img/GitHub-Logo.png" /> repo </a>
+
         </div>
 
-	
-	    <div class="col-md-4"  id="area1">
-		<br>
-		<p>
-		Given a combination of origin, sex, and age of the refugee applicant, you can explore 
-		how number of applicants and acceptance rates in different European countries vary with
-        the number of foreigners already living in that country and the economy of the destination country.
-       
-       <br>
-       <br>
-		Values are listed in the table at the bottom, which is fully sortable by clicking on the column headers.       
-       
-        
-        <p>
-   					   	<form action="table.html" method="get">
-						<span class="styled-select">
-				
-					  <select name="CITIZEN">
-				    <option selected="selected" disabled>Choose Origin</option>
-						           <option  value="Afghanistan">Afghanistan</option>    
-						           <option  value="Bangladesh">Bangladesh</option>
-						           <option  value="China">China</option>
-				  		           <option  value="Congo">Congo</option>
-						           <option  value="Eritrea">Eritrea</option>
-						           <option  value="Georgia">Georgia</option>
-								   <option  value="Guinea">Guinea</option>
-						           <option  value="Kosovo">Kosovo</option>
-						           <option  value="Iran">Iran</option>
-						           <option  value="Iraq">Iraq</option>
-		           				   <option  value="Macedonia">Macedonia</option>
-						           <option  value="Nigeria">Nigeria</option>
-							       <option  value="Pakistan">Pakistan</option>
-						           <option  value="Russia">Russia</option>
-						           <option  value="Serbia">Serbia</option>
-						           <option  value="Somalia">Somalia</option>
-						           <option  value="Syria">Syria</option>
-						           <option  value="Turkey">Turkey</option>
-				  </select>
-				</span>
-				<br>
-				<span class="styled-select">
-				  <select name="SEX">
-				    <option selected="selected" disabled>Choose Sex</option>
-				    <option value="Males">Male</option>
-				    <option value="Females">Female</option>
-				  </select>
-				 </span>
-				 <br>
-				<span class="styled-select">
-				  <select name="AGE">
-				    <option selected="selected" disabled>Choose Age</option>
-				    <option value="0-14">0-14</option>
-				    <option value="14-17">14-17</option>
-				    <option value="18-34">18-34</option>
-				    <option value="35-64">35-64</option>
-				    <option value="65-...">65-...</option>
-				  </select>
-				</span>
-				
-				<br>
-				<input type="submit" name="submit" value="Regenrate >>" id="submit" />
-				
-				</form>
-
-   </div>
-
-   </div>
+       <div class="col-lg-4"">
+	<form action="table.html" method="get">
+							<span class="styled-select">
+					
+						 <select name="CITIZEN">
+					    <option selected="selected" disabled>Choose Origin</option>
+							           <option  value="Afghanistan">Afghanistan</option>    
+							           <option  value="Bangladesh">Bangladesh</option>
+							           <option  value="China">China</option>
+					  		           <option  value="Congo">Congo</option>
+							           <option  value="Eritrea">Eritrea</option>
+							           <option  value="Georgia">Georgia</option>
+									   <option  value="Guinea">Guinea</option>
+							           <option  value="Kosovo">Kosovo</option>
+							           <option  value="Iran">Iran</option>
+							           <option  value="Iraq">Iraq</option>
+			           				   <option  value="Macedonia">Macedonia</option>
+							           <option  value="Nigeria">Nigeria</option>
+								       <option  value="Pakistan">Pakistan</option>
+							           <option  value="Russia">Russia</option>
+							           <option  value="Serbia">Serbia</option>
+							           <option  value="Somalia">Somalia</option>
+							           <option  value="Syria">Syria</option>
+							           <option  value="Turkey">Turkey</option>
+					  </select>
+					</span>
+					<br>
+					<span class="styled-select">
+					  <select name="SEX">
+					    <option selected="selected" disabled>Choose Sex</option>
+					    <option value="Males">Male</option>
+					    <option value="Females">Female</option>
+					  </select>
+					 </span>
+					 <br>
+					<span class="styled-select">
+					  <select name="AGE">
+					    <option selected="selected" disabled>Choose Age</option>
+					    <option value="0-14">0-14</option>
+					    <option value="14-17">14-17</option>
+					    <option value="18-34">18-34</option>
+					    <option value="35-64">35-64</option>
+					    <option value="65-...">65-...</option>
+					  </select>
+					</span>
+					
+					<br>
+					<input type="submit" name="submit" value="Regenrate >>" id="submit" />
+					
+			  </form>
+        </div>
 
 
+   </div>  <!---row--->
+      
       </div>  <!-- jumbotron  -->
    </div> <!--  container -->
 
