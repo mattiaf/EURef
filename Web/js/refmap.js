@@ -1,19 +1,8 @@
 
-colorconnection='#FFF0A5'
 
-//domainperc=[0,0.15,0.25,0.5,0.625,0.75,0.875,1]
-domainperc=[0,0.2,0.4, 0.6,0.8,1.0]
 domainperc=d3.range(0,1, 1/8)
-var colorperc = d3.scale.linear()
-    .domain(domainperc)
-    .range(["#008837",
-"#a6dba0",
-"#f7f7f7",
-"#f4a582",
-"#ca0020"].reverse())
-.range(colorbrewer.RdBu[8])//    .range(["#d73027","#fc8d59","#fee08b","#ffffbf","#d9ef8b","#91cf60","#1a9850"]); // Colorbrewer2.0 scale
-//var width = document.getElementById().width;
-//var height =document.getElementById('containerd3').height; //width / 2;
+var colorperc = d3.scale.linear().domain(domainperc).range(colorbrewer.RdBu[8])
+
 
 width=950;
 height=600;

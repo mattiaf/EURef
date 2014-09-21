@@ -17,12 +17,14 @@ The code generates the json used in http://www.mfumagalli.com/EURef/map.html
 The code generates the CSV used in http://www.mfumagalli.com/EURef/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14
 
 
-# D3
-The D3 folder includes the scripts used for the online visualizations.
+# Web
+The Web folder includes the js/D3 scripts used for the online visualizations (in Web/js), and the twitter bootstrap framework of the website.
 
 ### Credits
 These visualizations could have not existed without the marvellous plethora of tutorial for D3 available on the web, and in particular 
 
-* D3 tutorials, by Scott Murray http://alignedleft.com/tutorials/d3
-* Let's Make a Map, by Mike Bostock(http://bost.ocks.org/mike/map/)
+* D3 tutorials, by Scott Murray (http://alignedleft.com/tutorials/d3)
+* Let's Make a bar chart, by Mike Bostock (http://bost.ocks.org/mike/bar/)
+* Let's Make a Map, by Mike Bostock (http://bost.ocks.org/mike/map/)
 * Sortable Table, by devforrest (http://devforrest.com/examples/table/table.php)
+* D3 scatterplot example, by weiglmc (http://bl.ocks.org/weiglemc/6185069)
