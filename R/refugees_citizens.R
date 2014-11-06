@@ -7,7 +7,11 @@
 
 ### ----- USEFUL FUNCTIONS  ------- #####
 
+<<<<<<< HEAD
 # Given a country and a nationality, gives back the most recent data for the number of citizens living in that country
+=======
+# Given a country and a nationality, returns the most recent data for the number of citizens living that country
+>>>>>>> 99d46529dab5081549b258950c85a8e5a64adbf6
 lastvaluecitizen <- function(a,b)
 {
         test2<-Citizens_wide[Citizens_wide$GEO == a & Citizens_wide$CITIZEN == b, ]
@@ -17,7 +21,7 @@ lastvaluecitizen <- function(a,b)
         return(as.numeric(last2))
 }
 
-# given a country and a nationality, gives back the most recent year with available data
+# given a country and a nationality, returns the most recent year with available data
 lastyearcitizen <- function(a,b)
 {
         test2<-Citizens_wide[Citizens_wide$GEO == a & Citizens_wide$CITIZEN == b, ]
