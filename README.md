@@ -18,6 +18,8 @@ The code generates the json used in http://www.mfumagalli.com/EURef/map.html
 *refugees_citizens.R* matches statistics on refugees with number of foreign citizens already living in the destination country
 The code generates the CSV used in http://www.mfumagalli.com/EURef/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14
 
+*gender_age_analysis.R* compares acceptance rates by gender / age
+
 # Web
 The Web folder includes the js/D3 scripts used for the online visualizations, and the twitter bootstrap framework of the website.
 
