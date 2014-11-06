@@ -55,17 +55,18 @@
 
       <div class="container">
     <div class="jumbotron">
-        <p> <small>In the last 5 years, more than a million refugees reached Europe.
-         Only a fraction of them got granted asylum. The likelihood of obtaining refugee status varies on the nationality of the applicant, and their destination.
+        <p> <small>In the last 5 years, more than a million asylum seekers arrived in Europe.
+         Only a fraction of them were granted asylum. 
+         The likelihood of obtaining refugee status varies with the nationality of the applicant, and their destination.
 		 <br>        
-         This interactive map shows how many refugees applied for asylum and what is their acceptance rate in each European country.
+         This interactive map shows how many refugees applied for asylum and their acceptance rate in each European country.
          Citizenships with more than 25000 asylum applicants are individually selectable in the menu below.
          </small>
         </p>         
-
-        <div id="containerd3" class="containerd3" style="height: 500px width: 500px">
-              		    <div class="styled-select">
-		    <select onchange="draw(topo)" id="metric">
+      <div class="row">
+        <div class="col-lg-4">
+		              		<div class="styled-select">
+		    	  <select onchange="draw(topo)" id="metric">
 	 			   <option selected disabled value="Total">Select Country of Origin</option>
 		
 		           <option  value="Total">Total</option>
@@ -90,15 +91,32 @@
 		           <option  value="Syria">Syria</option>
 		           <option  value="Turkey">Turkey</option>
 
-			</select>
-			</div>
+					</select>
+	
+					</div>
+
+		</div>
+		<div class="col-lg-4">
+						<div class="checkboxtext"><big><big>Show Number of Applications&nbsp&nbsp</big></big>
+			    	<input type="checkbox" id="checkpop"  onchange="draw(topo)"/> </div>
+	
+		</div>
+	</div>
+					
+					
+	        <div id="containerd3" class="containerd3" style="height: 500px width: 500px">
+				
 		  </div>
+			
+
 		    <script src="http://d3js.org/d3.v3.min.js"></script>
   		    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
      		<script src="http://d3js.org/topojson.v1.min.js"></script>
      		<script src="js/refmap.js"></script> 
 	  <p></p>
-      <p align="right"> <font size=2> Data from Eurostat / Data analysis with R / Visualization in D3</font></p>
+      <p align="right"> <font size=2.5> Data from Eurostat / Data analysis with R / Visualization in D3  / 
+      <a href="https://github.com/mattiaf/EURef"> <img height="10" src="img/GitHub-Logo.png" /> repo </a>
+ </font></p>
 
       </div>
     </div>
@@ -194,8 +212,8 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- Placed at the end of the document so the pages load faster-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>

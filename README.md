@@ -10,16 +10,16 @@ where I analyze the flux of refugees in Europe, and in particular try to answer 
 The R folder includes the codes used for wrangling/analysing the data.
 
 #### Codes
+*refugees_destination.R* reads stats of asylum applications and puts acceptance rates by country of origin and destination in a CSV
+
 *datatojson.R* takes as input a TopoJSON map of the world and adds to the properties of countries number of refugees application received and accepted.
 The code generates the json used in http://www.mfumagalli.com/EURef/map.html
 
 *refugees_citizens.R* matches statistics on refugees with number of foreign citizens already living in the destination country
 The code generates the CSV used in http://www.mfumagalli.com/EURef/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14
 
-*refugees_destination.R* reads stats of asylum applications and puts acceptance rates by country of origin and destination in a CSV
-
 # Web
-The Web folder includes the js/D3 scripts used for the online visualizations (in Web/js), and the twitter bootstrap framework of the website.
+The Web folder includes the js/D3 scripts used for the online visualizations, and the twitter bootstrap framework of the website.
 
 ### Credits
 These visualizations could have not existed without the marvellous plethora of tutorial for D3 available on the web, and in particular 
