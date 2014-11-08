@@ -6,6 +6,16 @@ where I analyze the flux of refugees in Europe, and in particular try to answer 
 * Which European countries accept more refugees? Is there any correlation with the economic situation of the countries itself?
 * Do refugees tend to go to countries where there is already a community of immigrants from their home nation?
 
+# Data Sources
+
+*Eurostat: Decisions on applications by citizenship, age and sex Annual aggregated data*
+http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_asydcfsta&lang=en
+Contains Total Number of Applications / Positive Applications divided by sex, age, citizenship, country of destination
+
+*Eurostat: Decisions on applications by citizenship, age and sex Annual aggregated data*
+http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_pop1ctz&lang=en
+Contains number of citizens of various countries live in each European country
+
 # R
 The R folder includes the codes used for wrangling/analysing the data.
 
