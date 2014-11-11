@@ -120,46 +120,52 @@ dev.off()
 
 ### ----- Acceptance Rate by Sex / Age, for given Origin / Destination ------- #####
 # are children more likely to be accepted than adults?
-# plots acceptance rate by Sex/Gender for a couple of origin/destination
-# prints pvalues for null hypothesis 'there is no difference depending on age'
+
+
+# this function plots Acceptance Rate divided by age/gender for a combination of origin country and destination country.
+# it computes pvalues for the null hypothesys 'there is no difference depending on age'
+gender_age <- function(orig,dest){
+        nameoutput <- paste('Plots/',orig,dest,'.jpeg',sep='',collapse='')
+        jpeg(nameoutput,width = 503, height = 437, units = "px")
+        plot(c(-1),c(-1),col="#304E67", 
+                     ylim=c(0, 1), xlim=c(0,80),lwd=3,
+                     bty="l", axes=FALSE, ann=TRUE, cex=1.0, tck=1, xlab='Age', ylab='Acceptance Rate', main=paste(orig, ' -> ', dest), cex.lab=1.25, cex.main=1.25)
+                mtext("(2008-2013)")
+                axis(1, lwd=3, at=c(0,20,40,60,80))
+                axis(2, lwd=3, las=1, at=c(0,0.25,0.50,0.75,1.00), yaxp=c(0,100,4))
+                for(y in c(0.25, 0.50, 0.75, 1.00)) {
+                        lines(age, rep(y, length(PercentageGEOCITIZENAGESEX[dest,orig,,"Males"])), type="l", col="gray", lwd=1)
+                        }
+                lines(age,PercentageGEOCITIZENAGESEX[dest,orig,,"Males"], type="b", col="#304E67", lwd=3)#, cex=log10(TotalGEOCITIZENAGESEX[dest,orig,,"Males"]))
+                lines(age,PercentageGEOCITIZENAGESEX[dest,orig,,"Females"], type="b", col="#974449", lwd=3)#,cex=log10(TotalGEOCITIZENAGESEX[dest,orig,,"Females"]))
+                legend(55, 0.2, c("Males","Females"), cex=1, 
+                       col=c("#304E67" ,"#974449"), 
+                       pch=1:1, # circles
+                       lty=1:1, # solid 
+                       lwd=3, # line width
+                       bty="n") # no box around
+        dev.off()
+        
+        # null hypothesys testing "age/gender don't matter"
+        # compares P(Y|age,sex)/P(Y) with 1
+
+        sigma<-IncreaseProb[dest,orig,,]*sqrt(1/TotalGEOCITIZEN[dest,orig]+1/PositiveGEOCITIZEN[dest,orig] + 1/TotalGEOCITIZENAGESEX[dest,orig,,]+1/PositiveGEOCITIZENAGESEX[dest,orig,,]) # from poisson stats
+        zscores<-(IncreaseProb[dest,orig,,] - 1) /sigma  *sqrt(TotalGEOCITIZENAGESEX[dest,orig,,]) # z = mean / sigma * sqrt(N)
+        
+        pvalue2sided<-2*pnorm(-abs(zscores))
+        options(scipen=1)
+        print(paste(orig, '->',dest))
+        print('Null Hypothesis excluded at... (%)')
+        print((1-pvalue2sided)*100)
+}
 
 
 
-orig = "Somalia"
-dest = "Netherlands"
-dest="Germany"
-orig="Afghanistan"
+gender_age('Somalia','Netherlands')
+gender_age('Afghanistan','Germany')
+gender_age('Somalia','Sweden')
+gender_age('Syria','Sweden')
 
-nameoutput <- paste('Plots/',orig,dest,'.jpeg',sep='',collapse='')
-jpeg(nameoutput,width = 503, height = 437, units = "px")
-plot(c(-1),c(-1),col="#304E67", 
-             ylim=c(0, 1), xlim=c(0,80),lwd=3,
-             bty="l", axes=FALSE, ann=TRUE, cex=1.0, tck=1, xlab='Age', ylab='Acceptance Rate', main=paste(orig, ' -> ', dest), cex.lab=1.25, cex.main=1.25)
-        mtext("(2008-2013)")
-        axis(1, lwd=3, at=c(0,20,40,60,80))
-        axis(2, lwd=3, las=1, at=c(0,0.25,0.50,0.75,1.00), yaxp=c(0,100,4))
-        for(y in c(0.25, 0.50, 0.75, 1.00)) {
-                lines(age, rep(y, length(PercentageGEOCITIZENAGESEX[dest,orig,,"Males"])), type="l", col="gray", lwd=1)
-        }
-        lines(age,PercentageGEOCITIZENAGESEX[dest,orig,,"Males"], type="b", col="#304E67", lwd=3)#, cex=log10(TotalGEOCITIZENAGESEX[dest,orig,,"Males"]))
-        lines(age,PercentageGEOCITIZENAGESEX[dest,orig,,"Females"], type="b", col="#974449", lwd=3)#,cex=log10(TotalGEOCITIZENAGESEX[dest,orig,,"Females"]))
-        legend(55, 0.2, c("Males","Females"), cex=1, 
-               col=c("#304E67" ,"#974449"), 
-               pch=1:1, # circles
-               lty=1:1, # solid 
-               lwd=3, # line width
-               bty="n") # no box around
-dev.off()
-
-# null hypothesys testing "age/gender don't matter"
-# compares P(Y|age,sex)/P(Y) with 1
-sigma<-IncreaseProb[dest,orig,,]*sqrt(1/TotalGEOCITIZEN[dest,orig]+1/PositiveGEOCITIZEN[dest,orig] + 1/TotalGEOCITIZENAGESEX[dest,orig,,]+1/PositiveGEOCITIZENAGESEX[dest,orig,,])
-zscores<-(IncreaseProb[dest,orig,,] - 1) /sigma  *sqrt(TotalGEOCITIZENAGESEX[dest,orig,,])
-pvalue2sided<-2*pnorm(-abs(zscores))
-options(scipen=1)
-print(paste(orig, '->',dest))
-print('Null Hypothesis excluded at... (%)')
-print((1-pvalue2sided)*100)
 
 
 
