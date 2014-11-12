@@ -33,6 +33,14 @@ The code generates the CSV used in http://www.mfumagalli.com/EURef/table.html?CI
 # Web
 The Web folder includes the js/D3 scripts used for the online visualizations, and the twitter bootstrap framework of the website.
 
+*js/refmap.js* plots the map in www.mfumagalli.com/EURef/map.html. It reads the js/world-topo-min-2.json file, creates the countours of countries, and colors them based on acceptance rates of refugees. A dropdown menu in the html file determines which origin data must be displayed. A checkbox controls the visualization of total number of refugees by circles overplotted on the map.
+Mouseover a country triggers the visibility of a tooltip showing some stats.
+
+*js/twographs.js* plots the graphs in http://www.mfumagalli.com/EURef/hosts.html . It reads variables from a csv file, and plots two scatterplots based on them. When placing the mouse over a dot, it highlights the same country in the second scatter plot (easy trick: points corresponding to the same country have the same ID)
+
+*js/graphontable.js* plots the graph in http://www.mfumagalli.com/EURef/table.html?CITIZEN=Afghanistan&SEX=Males&AGE=0-14 . Reads csv file, and filters data by age, sex, gender (defined in the URL). 
+
+
 ### Credits
 These visualizations could have not existed without the marvellous plethora of tutorial for D3 available on the web, and in particular 
 
