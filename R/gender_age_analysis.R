@@ -126,7 +126,7 @@ dev.off()
 # it computes pvalues for the null hypothesys 'there is no difference depending on age'
 gender_age <- function(orig,dest){
         nameoutput <- paste('Plots/',orig,dest,'.jpeg',sep='',collapse='')
-        jpeg(nameoutput,width = 503, height = 437, units = "px")
+  #      jpeg(nameoutput,width = 503, height = 437, units = "px")
         plot(c(-1),c(-1),col="#304E67", 
                      ylim=c(0, 1), xlim=c(0,80),lwd=3,
                      bty="l", axes=FALSE, ann=TRUE, cex=1.0, tck=1, xlab='Age', ylab='Acceptance Rate', main=paste(orig, ' -> ', dest), cex.lab=1.25, cex.main=1.25)
@@ -144,7 +144,7 @@ gender_age <- function(orig,dest){
                        lty=1:1, # solid 
                        lwd=3, # line width
                        bty="n") # no box around
-        dev.off()
+  #      dev.off()
         
         # null hypothesys testing "age/gender don't matter"
         # compares P(Y|age,sex)/P(Y) with 1
@@ -164,40 +164,38 @@ gender_age <- function(orig,dest){
 gender_age('Somalia','Netherlands')
 gender_age('Afghanistan','Germany')
 gender_age('Somalia','Sweden')
-gender_age('Syria','Sweden')
-
 
 
 
 ### ----- Acceptance Rate by Sex / Age, for all combinations of Origin/Destination ------- #####
 
 # format in long form
-meltedTotal <- melt(TotalGEOCITIZENAGESEX[,,,"Males"]) # number of male citizens
-good<-meltedTotal$value > 100 & !is.na(meltedTotal$value) # to exclude cases with low statistics
-melted <- melt(IncreaseProb[,,,"Males"]) #  P(Y|sex,age,origin,destination) / P(Y|origin,destination)
-names(melted) <- c("GEO","CITIZEN","AGE","Value") 
-melted<-melted[good,]  # exclude low statistics
-meltedMales<-melted[!is.na(melted$Value) & melted$Value > 0,]
+longformTotal <- melt(TotalGEOCITIZENAGESEX[,,,"Males"]) # number of male citizens
+good<-longformTotal$value > 100 & !is.na(longformTotal$value) # to exclude cases with low statistics
+longform <- melt(IncreaseProb[,,,"Males"]) #  P(Y|sex,age,origin,destination) / P(Y|origin,destination)
+names(longform) <- c("GEO","CITIZEN","AGE","Value") 
+longform<-longform[good,]  # exclude low statistics
+longformMales<-longform[!is.na(longform$Value) & longform$Value > 0,]
 
-means<-tapply(meltedMales$Value, meltedMales$AGE,mean)
-sds<-tapply(meltedMales$Value, meltedMales$AGE,sd)
-counts<-tapply(meltedMales$Value, meltedMales$AGE,length)
+means<-tapply(longformMales$Value, longformMales$AGE,mean)
+sds<-tapply(longformMales$Value, longformMales$AGE,sd)
+counts<-tapply(longformMales$Value, longformMales$AGE,length)
 zval <- (means-means[3])/ sqrt(sds^2/counts + sds[3]^2/counts[3])
 pvalue2sided<-2*pnorm(-abs(zval))
 print('Men')
 print('Null Hypothesys (no dependence on age) rejected at..[%]')
 print((1-pvalue2sided)*100)
 
-meltedTotal <- melt(TotalGEOCITIZENAGESEX[,,,"Females"]) # number of female citizens
-good<-meltedTotal$value > 100 & !is.na(meltedTotal$value) # to exclude cases with low statistics
-melted <- melt(IncreaseProb[,,,"Females"]) #  P(Y|sex,age,origin,destination) / P(Y|origin,destination)
-names(melted) <- c("GEO","CITIZEN","AGE","Value")
-melted<-melted[good,] # exclude low statistics
-meltedFemales<-melted[!is.na(melted$Value) & melted$Value > 0,]
+longformTotal <- melt(TotalGEOCITIZENAGESEX[,,,"Females"]) # number of female citizens
+good<-longformTotal$value > 100 & !is.na(longformTotal$value) # to exclude cases with low statistics
+longform <- melt(IncreaseProb[,,,"Females"]) #  P(Y|sex,age,origin,destination) / P(Y|origin,destination)
+names(longform) <- c("GEO","CITIZEN","AGE","Value")
+longform<-longform[good,] # exclude low statistics
+longformFemales<-longform[!is.na(longform$Value) & longform$Value > 0,]
 
-means<-tapply(meltedFemales$Value, meltedFemales$AGE,mean)
-sds<-tapply(meltedFemales$Value, meltedFemales$AGE,sd)
-counts<-tapply(meltedFemales$Value, meltedFemales$AGE,length)
+means<-tapply(longformFemales$Value, longformFemales$AGE,mean)
+sds<-tapply(longformFemales$Value, longformFemales$AGE,sd)
+counts<-tapply(longformFemales$Value, longformFemales$AGE,length)
 zval <- (means-means[3])/ sqrt(sds^2/counts + sds[3]^2/counts[3])
 pvalue2sided<-2*pnorm(-abs(zval))
 
@@ -210,7 +208,7 @@ print((1-pvalue2sided)*100)
 
 
 jpeg('Plots/MalesAge.jpeg',width = 503, height = 437, units = "px")
-        boxplot(meltedMales$Value ~ meltedMales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2., border='#304E67', axes=FALSE)
+        boxplot(longformMales$Value ~ longformMales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2., border='#304E67', axes=FALSE)
         mtext("Males",col='#304E67',lwd=3)
         axis(side = 1, lwd = 3,at=c(0,1,2,3,4,5,6), labels=c("","0-14","14-18","18-35","24-65","65+",""))
         axis(side = 2, lwd = 3,at=c(0,1,2,3,4))
@@ -223,8 +221,8 @@ dev.off()
 
 
 jpeg('Plots/FemalesAge.jpeg',width = 503, height = 437, units = "px")
-#        boxplot(meltedMales$Value ~ meltedMales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2., border='#304E67', axes=FALSE)
-        boxplot(meltedFemales$Value ~ meltedFemales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2.5, border='#974449', axes=FALSE)
+#        boxplot(longformMales$Value ~ longformMales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2., border='#304E67', axes=FALSE)
+        boxplot(longformFemales$Value ~ longformFemales$AGE,outline=FALSE, xlab='Age', ylab='P(A->B,age) / P(A->B)', ylim=c(0,3.5), lwd=2.5, border='#974449', axes=FALSE)
         mtext("FEMALES",col='#974449',lwd=3)
         axis(side = 1, lwd = 3,at=c(0,1,2,3,4,5,6), labels=c("","0-14","14-18","18-35","24-65","65+",""))
         axis(side = 2, lwd = 3,at=c(0,1,2,3,4))
